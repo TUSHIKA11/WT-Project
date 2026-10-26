@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Department of Computer Science — ABC College of Engineering</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=DM+Sans:wght@400;500;600&family=Fira+Code:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f8ff;--bg2:#eceeff;--card:#fff;--tx:#2b2f4a;--mut:#6a6f93;--hd:#161a3a;--ln:#dfe2f5;--a:#5b4bff;--b:#00c2a8;--c:#ff7a45;--grad:linear-gradient(120deg,var(--a),#8a3dff 55%,var(--c));--sh:0 10px 30px -12px rgba(60,50,160,.35);--disp:'Sora',system-ui,sans-serif;--sans:'DM Sans',system-ui,sans-serif;--mono:'Fira Code',monospace}
+:root[data-theme=dark]{--bg:#0b0d1f;--bg2:#12152e;--card:#171b3a;--tx:#d5d9f5;--mut:#8f95c0;--hd:#fff;--ln:#262b57;--sh:0 10px 30px -12px #000;color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font:400 16px/1.7 var(--sans);background:var(--bg);color:var(--tx);overflow-x:hidden;transition:background .4s,color .4s}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+:focus-visible{outline:3px solid var(--b);outline-offset:3px}
+h1,h2,h3{font-family:var(--disp);color:var(--hd);line-height:1.15}
+.w{max-width:1160px;margin:auto;padding:0 22px}section{padding:84px 0}.alt{background:var(--bg2)}
+.eyebrow{font:500 .78rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--a);margin-bottom:10px}
+.title{font-size:clamp(1.7rem,4vw,2.6rem);max-width:20ch}.g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mut);max-width:58ch;margin-top:12px}
+/* utility bar + nav */
+.util{background:var(--hd);color:#cfd3f5;font-size:.82rem}.util .w{display:flex;justify-content:space-between;align-items:center;height:38px;gap:12px}
+.util button,.util a{margin-right:18px;opacity:.85;transition:.2s}.util button:hover,.util a:hover{opacity:1;color:var(--b)}.util div:last-child *{margin:0 0 0 18px}
+header{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--ln)}
+header .w{display:flex;align-items:center;justify-content:space-between;height:70px}
+.brand{display:flex;align-items:center;gap:12px;font:700 1rem var(--disp);color:var(--hd)}.brand small{display:block;font:400 .72rem var(--sans);color:var(--mut)}
+.logo{width:42px;height:42px;border-radius:13px;background:var(--grad);display:grid;place-items:center;color:#fff;font:700 .9rem var(--mono);animation:glow 4s infinite}
+@keyframes glow{50%{box-shadow:0 0 0 8px rgba(91,75,255,.15)}}
+nav{display:flex;gap:2px;align-items:center}nav a,nav button{padding:8px 14px;border-radius:99px;font-size:.92rem;color:var(--mut);transition:.25s}nav a:hover,nav button:hover{background:var(--bg2);color:var(--a)}
+nav .apply{background:var(--grad);color:#fff!important;font-weight:600;margin-left:8px}nav .apply:hover{filter:brightness(1.1);transform:translateY(-2px)}
+.hb{display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--ln);font-size:1.3rem}
+@media(max-width:900px){.hb{display:block}nav{position:fixed;top:108px;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--bg);padding:14px 22px 22px;border-bottom:1px solid var(--ln);transform:translateY(-140%);transition:.35s;z-index:-1}nav.o{transform:none}nav a,nav button{padding:14px;text-align:center}nav .apply{margin:8px 0 0}.util .h{display:none}}
+/* buttons */
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:99px;font-weight:600;transition:transform .25s,box-shadow .25s}
+.btn.p{background:var(--grad);color:#fff;box-shadow:0 12px 28px -10px rgba(91,75,255,.7)}.btn.p:hover{transform:translateY(-3px);box-shadow:0 18px 34px -10px rgba(255,122,69,.6)}
+.btn.p::after{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);transition:left .6s}.btn.p:hover::after{left:130%}
+.btn.o{border:1.5px solid var(--ln);background:var(--card)}.btn.o:hover{border-color:var(--a);color:var(--a);transform:translateY(-3px)}.btn:active{transform:scale(.96)}
+.rip{position:absolute;border-radius:50%;background:rgba(255,255,255,.55);transform:scale(0);animation:rp .6s linear;pointer-events:none}@keyframes rp{to{transform:scale(4);opacity:0}}
+/* hero */
+.hero{position:relative;overflow:hidden;padding:90px 0 70px;background:radial-gradient(900px 400px at 85% -10%,rgba(138,61,255,.18),transparent 60%),radial-gradient(700px 400px at -10% 110%,rgba(0,194,168,.16),transparent 60%)}
+.hero .w{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.pill{display:inline-flex;gap:10px;align-items:center;padding:7px 16px;border:1px solid var(--ln);border-radius:99px;background:var(--card);font-size:.84rem;margin-bottom:22px}.pill i{width:8px;height:8px;border-radius:50%;background:var(--b);animation:pl 2s infinite}@keyframes pl{70%{box-shadow:0 0 0 9px transparent}0%{box-shadow:0 0 0 0 var(--b)}}
+.hero h1{font-size:clamp(2.3rem,5.4vw,4.1rem);letter-spacing:-.025em}.hero h1 span{display:inline-block;opacity:0;transform:translateY(30px);animation:up .8s forwards}.hero h1 span:nth-child(2){animation-delay:.25s}.hero h1 span:nth-child(3){animation-delay:.5s}
+@keyframes up{to{opacity:1;transform:none}}
+.type{font:500 1.05rem var(--mono);color:var(--a);margin-top:16px;min-height:1.8em}.type::after{content:"▍";animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
+.hero p.l{color:var(--mut);max-width:52ch;margin-top:14px;font-size:1.06rem}.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.art{position:relative;animation:bob 6s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-14px)}}
+.chip{position:absolute;padding:9px 15px;border-radius:14px;background:var(--card);border:1px solid var(--ln);box-shadow:var(--sh);font:500 .76rem var(--mono)}.c1{top:-10px;right:0;color:var(--b)}.c2{bottom:34px;left:-16px;color:var(--c)}.c3{bottom:-14px;right:36px;color:var(--a)}
+@media(max-width:900px){.hero{padding-top:56px}.hero .w{grid-template-columns:1fr}.art{max-width:440px;margin:auto}}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:-34px;position:relative;z-index:2}
+.stat{background:var(--card);border:1px solid var(--ln);border-radius:22px;padding:24px;text-align:center;box-shadow:var(--sh);transition:.3s}.stat:hover{transform:translateY(-6px)}
+.stat b{display:block;font:700 2.3rem var(--disp)}.stat span{color:var(--mut);font-size:.88rem}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+/* cards */
+.grid{display:grid;gap:22px;margin-top:42px}.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:1000px){.g4{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:1fr 1fr}}@media(max-width:600px){.g4,.g3{grid-template-columns:1fr}}
+.card{display:block;text-align:left;width:100%;background:var(--card);border:1px solid var(--ln);border-radius:22px;overflow:hidden;transition:transform .35s,box-shadow .35s,border-color .35s}
+.card:hover{transform:translateY(-8px);box-shadow:var(--sh);border-color:var(--a)}
+.im{height:150px;display:grid;place-items:center;font-size:3.4rem;position:relative;overflow:hidden}.im::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(255,255,255,.35),transparent 50%)}.im i{font-style:normal;transition:transform .5s;position:relative}.card:hover .im i{transform:scale(1.25) rotate(8deg)}
+.cb{padding:20px 22px 24px}.cb small{font:500 .72rem var(--mono);color:var(--a)}.cb h3{font-size:1.06rem;margin:6px 0}.cb p{font-size:.9rem;color:var(--mut)}
+.ico{width:52px;height:52px;border-radius:16px;background:var(--grad);display:grid;place-items:center;font-size:1.5rem;margin-bottom:16px}
+/* split + events */
+.split{display:grid;grid-template-columns:1fr 1fr;border-radius:28px;overflow:hidden;border:1px solid var(--ln);background:var(--card)}
+.split .t{padding:52px 46px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:14px}.split .v{background:var(--grad);display:grid;place-items:center;min-height:300px;position:relative;overflow:hidden}
+.v pre{font:500 .95rem/1.7 var(--mono);color:#fff;background:rgba(10,12,40,.55);padding:24px 28px;border-radius:18px;backdrop-filter:blur(8px);animation:bob 6s ease-in-out infinite}
+@media(max-width:800px){.split{grid-template-columns:1fr}.split .t{padding:34px 26px}}
+.ev{text-align:center;padding:24px}.ev .d{font:700 2rem var(--disp);background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}.ev .d small{display:block;font:500 .78rem var(--mono);color:var(--mut);-webkit-text-fill-color:var(--mut)}
+.ev h3{font-size:1.02rem;margin:8px 0}.ev p{font-size:.88rem;color:var(--mut);margin-bottom:12px}.ln{color:var(--a);font-weight:600;font-size:.9rem;transition:letter-spacing .3s}.ln:hover{letter-spacing:.06em}
+/* footer */
+footer{background:var(--hd);color:#b9bee6;padding:56px 0 0;font-size:.92rem}:root[data-theme=dark] footer{background:#06071a}
+footer .w{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}footer h4{font:600 .8rem var(--mono);color:#fff;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px}footer a,footer button{display:block;padding:3px 0;text-align:left;transition:.2s}footer a:hover,footer button:hover{color:var(--b);transform:translateX(4px)}
+.cp{border-top:1px solid #ffffff1f;margin-top:40px;padding:20px;text-align:center;font-size:.82rem}@media(max-width:800px){footer .w{grid-template-columns:1fr 1fr}}
+/* modal / toast / top */
+#md{position:fixed;inset:0;background:rgba(8,10,30,.6);backdrop-filter:blur(4px);display:none;place-items:center;z-index:60;padding:20px}#md.o{display:grid;animation:fd .25s}@keyframes fd{from{opacity:0}}
+.box{background:var(--card);color:var(--tx);max-width:600px;width:100%;max-height:85vh;overflow:auto;padding:36px;border-radius:24px;border-top:6px solid var(--a);position:relative;animation:pop .35s cubic-bezier(.2,.9,.3,1.2)}@keyframes pop{from{transform:scale(.9) translateY(20px);opacity:0}}
+.box h2{font-size:1.7rem;margin-bottom:12px}.box p{color:var(--mut);margin-bottom:10px}.box ul{padding-left:20px;color:var(--mut)}.x{position:absolute;right:16px;top:10px;font-size:2rem;line-height:1}
+.box input{width:100%;padding:13px 16px;border-radius:12px;border:1.5px solid var(--ln);background:var(--bg2);color:var(--tx);font:inherit;margin:8px 0 12px}.box input:focus{outline:none;border-color:var(--a)}
+.sr a{display:block;padding:10px 0;color:var(--a);border-bottom:1px solid var(--ln)}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,130px);background:var(--hd);color:#fff;padding:13px 24px;border-radius:99px;transition:.4s;z-index:70}#toast.s{transform:translate(-50%,0)}
+#bt{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));width:48px;height:48px;border-radius:50%;background:var(--grad);color:#fff;font-size:1.2rem;opacity:0;pointer-events:none;transition:.3s;z-index:40}#bt.s{opacity:1;pointer-events:auto}#bt:hover{transform:translateY(-4px)}
+.rv{opacity:0;transform:translateY(32px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.3,1)}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.hero h1 span{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="util"><div class="w">
+  <div><button data-i="news">News</button><a href="#events">Events</a><button data-i="careers" class="h">Careers</button><button data-i="alumni" class="h">Alumni</button></div>
+  <div><button data-i="visit">Visit</button><button data-i="contact">Contact</button><button id="th" aria-label="Toggle theme">🌙</button><button id="sb" aria-label="Search">🔍</button></div>
+</div></div>
+
+<header><div class="w">
+  <a href="#top" class="brand"><span class="logo">&lt;/&gt;</span><span>Computer Science<small>ABC College of Engineering</small></span></a>
+  <button class="hb" id="hb" aria-label="Menu" aria-expanded="false">☰</button>
+  <nav id="nav" aria-label="Main">
+    <a href="#about">About</a><a href="#programs">Programs</a><a href="#research">Research</a><a href="#events">Events</a><a href="#news">News</a>
+    <button data-i="admissions" class="apply">Apply now</button>
+  </nav>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="w">
+  <div>
+    <div class="pill"><i></i><span id="greet">Welcome</span></div>
+    <h1><span>Think.</span> <span>Code.</span> <span class="g">Create.</span></h1>
+    <p class="type" id="typed"></p>
+    <p class="l">The Department of Computer Science at ABC College of Engineering trains the next generation of software engineers, AI researchers and security experts — with hands-on labs, real projects and mentors who care.</p>
+    <div class="cta"><button class="btn p" data-i="apply">Start your application →</button><a class="btn o" href="#programs">Explore programs</a></div>
+  </div>
+  <div class="art">
+    <svg viewBox="0 0 440 360" role="img" aria-label="Illustration of code editor and neural network">
+      <defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5b4bff"/><stop offset=".6" stop-color="#8a3dff"/><stop offset="1" stop-color="#ff7a45"/></linearGradient></defs>
+      <rect x="10" y="20" width="420" height="320" rx="24" fill="#12163a"/><rect x="10" y="20" width="420" height="320" rx="24" fill="none" stroke="url(#gg)" stroke-width="2.5"/>
+      <circle cx="40" cy="48" r="6" fill="#ff5c7a"/><circle cx="62" cy="48" r="6" fill="#ffd166"/><circle cx="84" cy="48" r="6" fill="#00c2a8"/>
+      <g font-family="Fira Code,monospace" font-size="14.5"><text x="34" y="100" fill="#a78bff">def</text><text x="72" y="100" fill="#00e0c3">learn</text><text x="126" y="100" fill="#cfd3f5">(you):</text>
+      <text x="58" y="130" fill="#cfd3f5">skills = </text><text x="130" y="130" fill="#ffd166">build</text><text x="176" y="130" fill="#cfd3f5">(ai, web, sec)</text>
+      <text x="58" y="160" fill="#a78bff">return</text><text x="112" y="160" fill="#ff9d6c">"future"</text></g>
+      <g stroke="#5b4bff" stroke-width="1.6" opacity=".8"><path d="M80 230L190 205M80 230L190 270M80 290L190 205M80 290L190 270M190 205L310 235M190 270L310 235M190 205L310 300M190 270L310 300"/></g>
+      <g fill="url(#gg)"><circle cx="80" cy="230" r="13"/><circle cx="80" cy="290" r="13"/><circle cx="190" cy="205" r="13"/><circle cx="190" cy="270" r="13"/><circle cx="310" cy="235" r="13"/><circle cx="310" cy="300" r="13"/></g>
+      <rect x="345" y="215" width="68" height="100" rx="12" fill="#1b2050"/><g fill="#00c2a8"><rect x="357" y="270" width="10" height="35" rx="3"/><rect x="373" y="248" width="10" height="57" rx="3"/><rect x="389" y="228" width="10" height="77" rx="3"/></g>
+    </svg>
+    <span class="chip c1">● build passing</span><span class="chip c2">AI · Cyber · Cloud</span><span class="chip c3">100% hands-on</span>
+  </div>
+</div></section>
+
+<div class="w"><div class="stats" id="stats">
+  <div class="stat"><b data-n="1200">0</b><span>Students</span></div>
+  <div class="stat"><b data-n="45">0</b><span>Faculty &amp; mentors</span></div>
+  <div class="stat"><b data-n="12">0</b><span>Research labs</span></div>
+  <div class="stat"><b data-n="94">0</b><span>% placements</span></div>
+</div></div>
+
+<section id="about"><div class="w"><div class="split rv">
+  <div class="t"><div class="eyebrow">About the department</div><h2 class="title">Where curiosity becomes <span class="g">capability</span></h2>
+    <p class="sub">Since 1985 our department has blended strong theory with real-world projects, so graduates leave with problem-solving skills, a portfolio and the confidence to ship.</p>
+    <button class="btn p" data-i="about">Read our story</button></div>
+  <div class="v"><pre>$ git commit -m "learn"
+$ python ship.py
+✓ projects:  120+
+✓ hackathons: 18 wins
+✓ your turn →</pre></div>
+</div></div></section>
+
+<section class="alt" id="programs"><div class="w">
+  <div class="rv"><div class="eyebrow">Programs</div><h2 class="title">Pick your path, <span class="g">level up</span></h2></div>
+  <div class="grid g4">
+    <button class="card rv" data-i="btech"><div class="im" style="background:linear-gradient(135deg,#5b4bff,#8a3dff)"><i>💻</i></div><div class="cb"><small>UG · 4 YEARS</small><h3>B.Tech Computer Science</h3><p>Algorithms, systems, AI and software engineering.</p></div></button>
+    <button class="card rv" data-i="mtech"><div class="im" style="background:linear-gradient(135deg,#00c2a8,#3d8bff)"><i>🧠</i></div><div class="cb"><small>PG · 2 YEARS</small><h3>M.Tech Computer Science</h3><p>Specialise in AI, security or data engineering.</p></div></button>
+    <button class="card rv" data-i="bca"><div class="im" style="background:linear-gradient(135deg,#ff7a45,#ff3d81)"><i>🚀</i></div><div class="cb"><small>UG · 3 YEARS</small><h3>BCA / MCA</h3><p>Application development and modern web stacks.</p></div></button>
+    <button class="card rv" data-i="phd"><div class="im" style="background:linear-gradient(135deg,#161a3a,#5b4bff)"><i>🔬</i></div><div class="cb"><small>RESEARCH</small><h3>Ph.D. &amp; Certificates</h3><p>Original research with funded fellowships.</p></div></button>
+  </div>
+</div></section>
+
+<section id="research"><div class="w">
+  <div class="rv"><div class="eyebrow">Research &amp; labs</div><h2 class="title">Spaces built for <span class="g">making things</span></h2><p class="sub">Four flagship labs where students and faculty tackle problems that matter.</p></div>
+  <div class="grid g4">
+    <div class="card rv" style="padding:26px"><div class="ico">🤖</div><h3>AI &amp; Machine Learning</h3><p style="color:var(--mut);font-size:.9rem;margin-top:6px">Vision, language models and responsible AI.</p></div>
+    <div class="card rv" style="padding:26px"><div class="ico">🔐</div><h3>Cybersecurity</h3><p style="color:var(--mut);font-size:.9rem;margin-top:6px">Ethical hacking, cryptography and privacy.</p></div>
+    <div class="card rv" style="padding:26px"><div class="ico">☁️</div><h3>Cloud &amp; Systems</h3><p style="color:var(--mut);font-size:.9rem;margin-top:6px">Distributed systems, DevOps and edge computing.</p></div>
+    <div class="card rv" style="padding:26px"><div class="ico">📊</div><h3>Data Science</h3><p style="color:var(--mut);font-size:.9rem;margin-top:6px">Big data, analytics and visualisation.</p></div>
+  </div>
+</div></section>
+
+<section class="alt" id="events"><div class="w">
+  <div class="rv"><div class="eyebrow">Events</div><h2 class="title">What's <span class="g">coming up</span></h2></div>
+  <div class="grid g3">
+    <div class="card ev rv"><div class="d">14<small>NOV 2026</small></div><h3>CodeSprint 24-hour Hackathon</h3><p>Build, break and demo with industry judges.</p><button class="ln" data-i="ev1">Register ›</button></div>
+    <div class="card ev rv"><div class="d">02<small>DEC 2026</small></div><h3>AI Seminar: Responsible LLMs</h3><p>Guest talk followed by a live Q&amp;A.</p><button class="ln" data-i="ev2">Reserve a seat ›</button></div>
+    <div class="card ev rv"><div class="d">15<small>DEC 2026</small></div><h3>Open Day &amp; Lab Tour</h3><p>Meet faculty and explore our labs.</p><button class="ln" data-i="visit">Book a visit ›</button></div>
+  </div>
+</div></section>
+
+<section id="news"><div class="w">
+  <div class="rv"><div class="eyebrow">Latest news</div><h2 class="title">Student &amp; faculty <span class="g">wins</span></h2></div>
+  <div class="grid g4">
+    <button class="card rv" data-i="n1"><div class="im" style="background:linear-gradient(135deg,#ff7a45,#ffb347)"><i>🏆</i></div><div class="cb"><small>HACKATHON</small><h3>CS team wins national hackathon in Delhi</h3></div></button>
+    <button class="card rv" data-i="n2"><div class="im" style="background:linear-gradient(135deg,#00c2a8,#3dd6f5)"><i>🌏</i></div><div class="cb"><small>GLOBAL</small><h3>New exchange sends students to Singapore and Munich</h3></div></button>
+    <button class="card rv" data-i="n3"><div class="im" style="background:linear-gradient(135deg,#8a3dff,#ff5ca8)"><i>🎖️</i></div><div class="cb"><small>FACULTY</small><h3>Prof. Meera Sharma named Fellow of the Academy of Engineering</h3></div></button>
+    <button class="card rv" data-i="n4"><div class="im" style="background:linear-gradient(135deg,#161a3a,#5b4bff)"><i>🛰️</i></div><div class="cb"><small>RESEARCH</small><h3>Students build onboard software for a CubeSat</h3></div></button>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="w">
+  <div><div class="brand" style="color:#fff"><span class="logo">&lt;/&gt;</span><span>Computer Science<small style="color:#9aa0d0">ABC College of Engineering</small></span></div><p style="margin-top:14px">Jaipur, Rajasthan, India<br>cs@abc.edu.in</p></div>
+  <div><h4>Academics</h4><a href="#programs">Programs</a><button data-i="admissions">Admissions</button><button data-i="careers">Careers</button></div>
+  <div><h4>Explore</h4><a href="#research">Research</a><a href="#events">Events</a><a href="#news">News</a></div>
+  <div><h4>Connect</h4><button data-i="contact">Contact us</button><button data-i="visit">Visit campus</button><button data-i="alumni">Alumni</button></div>
+</div><div class="cp">© 2026 Department of Computer Science · ABC College of Engineering</div></footer>
+
+<div id="md" role="dialog" aria-modal="true"><div class="box"><button class="x" id="mx" aria-label="Close">×</button><div id="mb"></div></div></div>
+<div id="toast" role="status"></div><button id="bt" aria-label="Back to top">↑</button>
+
+<script>
+var $=function(s,r){return(r||document).querySelector(s)},$$=function(s){return document.querySelectorAll(s)};
+/* greeting */
+(function(){var h=new Date().getHours();$("#greet").textContent=(h<12?"Good Morning":h<18?"Good Afternoon":"Good Evening")+"! Welcome to Computer Science."})();
+/* typing */
+(function(){var L=["Learn. Build. Innovate.","AI · Security · Cloud · Web","Your tech career starts here."],i=0,c=0,d=0,e=$("#typed");(function t(){var s=L[i];e.textContent=s.slice(0,c);if(!d&&c<s.length)c++;else if(!d){d=1;return setTimeout(t,1500)}else if(c>0)c--;else{d=0;i=(i+1)%L.length}setTimeout(t,d?32:70)})()})();
+/* reveal + counters */
+(function(){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.12});
+$$(".rv").forEach(function(n,k){n.style.transitionDelay=(k%4)*90+"ms";io.observe(n)});
+var so=new IntersectionObserver(function(es){es.forEach(function(x){if(!x.isIntersecting)return;so.unobserve(x.target);$$("[data-n]").forEach(function(b){var end=+b.dataset.n,t0=null;(function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/1500,1);b.textContent=Math.round(end*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(performance.now())})})},{threshold:.4});so.observe($("#stats"))})();
+/* header, nav, top, theme */
+(function(){var bt=$("#bt");addEventListener("scroll",function(){bt.classList.toggle("s",scrollY>600)},{passive:true});bt.onclick=function(){scrollTo({top:0})};
+var hb=$("#hb"),nav=$("#nav");hb.onclick=function(){var o=nav.classList.toggle("o");hb.setAttribute("aria-expanded",o);hb.textContent=o?"✕":"☰"};
+nav.querySelectorAll("a").forEach(function(a){a.onclick=function(){nav.classList.remove("o");hb.textContent="☰"}});
+var r=document.documentElement,th=$("#th");function set(m){r.dataset.theme=m;th.textContent=m=="dark"?"☀️":"🌙"}
+set(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");th.onclick=function(){set(r.dataset.theme=="dark"?"light":"dark")}})();
+/* ripple */
+$$(".btn").forEach(function(b){b.addEventListener("click",function(e){var r=b.getBoundingClientRect(),d=Math.max(r.width,r.height),s=document.createElement("span");s.className="rip";s.style.cssText="width:"+d+"px;height:"+d+"px;left:"+(e.clientX-r.left-d/2)+"px;top:"+(e.clientY-r.top-d/2)+"px";b.appendChild(s);setTimeout(function(){s.remove()},600)})});
+/* modal + toast + search */
+var INFO={
+about:["Our story","Founded in 1985, the department has grown from a small computing lab into a centre for AI, security and systems education.",["Industry-aligned curriculum","Project-based learning from year one","Mentorship from faculty and alumni"]],
+admissions:["Admissions","Applications for the 2027 session open soon. Check eligibility and deadlines with the admissions office.",["B.Tech: 10+2 with Mathematics","M.Tech: relevant B.Tech/B.E. degree","Entrance score plus interview"]],
+apply:["How to apply","Fill the online form, upload your documents and pay the application fee.",["Create an account","Upload marksheets and ID","Track your application status"]],
+btech:["B.Tech Computer Science","A four-year programme covering programming, algorithms, operating systems, databases, networks and AI, plus a capstone project.",["Core CS fundamentals","Electives in AI, Cyber, Cloud","Internship in final year"]],
+mtech:["M.Tech Computer Science","Two years of advanced study with a research thesis and industry collaboration.",["Specialisation tracks","Thesis with a faculty guide","Teaching and research assistantships"]],
+bca:["BCA / MCA","Practical application-development programmes covering web, mobile and databases.",["Full-stack projects","Placement training","Weekend coding clubs"]],
+phd:["Ph.D. & certificates","Research degrees and short certificates for working professionals.",["Funded fellowships","Part-time options","Industry co-supervision"]],
+visit:["Visit our campus","Join an open-day tour of our labs and meet the faculty. Tours run on weekdays and select Saturdays.",["Lab walkthrough","Meet faculty","Campus lunch"]],
+contact:["Contact us","Department of Computer Science, ABC College of Engineering, Jaipur, Rajasthan.",["Email: cs@abc.edu.in","Office hours: Mon–Fri, 10am–5pm"]],
+careers:["Careers","Join our faculty and staff. Openings are posted here as they become available.",["Assistant Professor","Lab Engineer","Research Associate"]],
+alumni:["Alumni network","Our alumni work at leading tech companies and startups worldwide and mentor current students.",["Mentorship programme","Annual alumni meet","Guest lectures"]],
+news:["News","Read the latest stories from our students and faculty.",[]],
+ev1:["CodeSprint Hackathon","A 24-hour hackathon open to all years. Teams of up to four. Prizes, mentors and food included.",["14 Nov 2026","Main lab block"]],
+ev2:["AI Seminar","A guest talk on building responsible large language models, followed by Q&A.",["2 Dec 2026","Auditorium"]],
+n1:["Hackathon win","Our team of four third-year students won first place at a national hackathon in Delhi with an assistive-tech app.",[]],
+n2:["Exchange programme","A new exchange lets students spend a semester at partner universities in Singapore and Munich.",[]],
+n3:["Fellowship","Prof. Meera Sharma was recognised for her contributions to machine learning and engineering education.",[]],
+n4:["CubeSat project","Students are writing onboard software for a small satellite in collaboration with a national space agency.",[]]};
+var md=$("#md"),mb=$("#mb");
+function open(k){var d=INFO[k];if(!d)return;mb.innerHTML="<h2>"+d[0]+"</h2><p>"+d[1]+"</p>"+(d[2].length?"<ul>"+d[2].map(function(x){return"<li>"+x+"</li>"}).join("")+"</ul>":"");md.classList.add("o")}
+function close(){md.classList.remove("o")}
+$$("[data-i]").forEach(function(b){b.addEventListener("click",function(e){e.preventDefault();$("#nav").classList.remove("o");open(b.dataset.i)})});
+$("#mx").onclick=close;md.onclick=function(e){if(e.target===md)close()};addEventListener("keydown",function(e){if(e.key=="Escape")close()});
+$("#sb").onclick=function(){mb.innerHTML='<h2>Search</h2><input id="q" placeholder="Try: B.Tech, AI, hackathon…" aria-label="Search"><div class="sr" id="sr"></div>';md.classList.add("o");var q=$("#q");q.focus();q.oninput=function(){var v=q.value.toLowerCase().trim(),h="";if(v)Object.keys(INFO).forEach(function(k){var d=INFO[k];if((d[0]+d[1]).toLowerCase().indexOf(v)>-1)h+='<a href="#" data-k="'+k+'">'+d[0]+"</a>"});$("#sr").innerHTML=h||(v?"<p>No results.</p>":"");$$("#sr [data-k]").forEach(function(a){a.onclick=function(e){e.preventDefault();open(a.dataset.k)}})}};
+</script>
+</body>
+</html>

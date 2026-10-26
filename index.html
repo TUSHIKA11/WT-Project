@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore five web page projects: college, computer science department, hospital, food corner, and online book store.">
+  <title>My Web Projects | Home</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#667085; --bg:#f5f7fb; --card:#fff; --accent:#5b4bff; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); }
+    .hero { padding:76px 22px 64px; text-align:center; color:white; background:radial-gradient(circle at 15% 10%,#8b5cf6 0,transparent 32%),linear-gradient(135deg,#111827,#29215f 65%,#145b69); }
+    .eyebrow { display:inline-block; padding:7px 13px; border:1px solid #ffffff55; border-radius:99px; background:#ffffff12; font-size:.82rem; letter-spacing:.08em; text-transform:uppercase; }
+    h1 { margin:20px 0 12px; font-size:clamp(2.2rem,6vw,4.2rem); line-height:1.05; }
+    .hero p { max-width:650px; margin:0 auto; color:#e1e7ff; font-size:1.05rem; line-height:1.7; }
+    main { max-width:1120px; margin:-26px auto 0; padding:0 22px 60px; position:relative; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:20px; }
+    .card { display:flex; flex-direction:column; min-height:245px; padding:25px; background:var(--card); border:1px solid #e5e7ef; border-radius:22px; box-shadow:0 14px 35px #18214a0c; transition:transform .2s,box-shadow .2s; }
+    .card:hover { transform:translateY(-5px); box-shadow:0 20px 45px #18214a18; }
+    .icon { display:grid; place-items:center; width:56px; height:56px; border-radius:16px; font-size:1.8rem; background:#eeebff; }
+    .card:nth-child(2) .icon { background:#fff0e8; }
+    .card:nth-child(3) .icon { background:#fff4cc; }
+    .card:nth-child(4) .icon { background:#dff8f1; }
+    .card:nth-child(5) .icon { background:#ffe8ef; }
+    h2 { margin:20px 0 8px; font-size:1.25rem; }
+    .card p { margin:0 0 22px; color:var(--muted); line-height:1.6; font-size:.94rem; }
+    .link { margin-top:auto; display:inline-flex; justify-content:center; align-items:center; gap:8px; padding:12px 16px; color:white; background:var(--accent); border-radius:12px; font-weight:700; text-decoration:none; }
+    .link:hover { background:#4635e8; }
+    footer { padding:25px 20px 35px; text-align:center; color:var(--muted); font-size:.9rem; }
+    @media(max-width:520px) { .hero { padding-top:55px; } .card { min-height:unset; } }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <span class="eyebrow">Portfolio · 5 Web Pages</span>
+    <h1>My Web Projects</h1>
+    <p>Choose a project below to open its website. This homepage brings all five HTML pages together in one GitHub Pages site.</p>
+  </header>
+  <main>
+    <section class="grid" aria-label="Web projects">
+      <article class="card">
+        <div class="icon" aria-hidden="true">🏫</div>
+        <h2>ABC College</h2>
+        <p>A college website showcasing campus information, facilities, and student resources.</p>
+        <a class="link" href="collage.html">Open College Page <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="card">
+        <div class="icon" aria-hidden="true">🩺</div>
+        <h2>City Care Hospital</h2>
+        <p>A healthcare website presenting hospital services and medical departments.</p>
+        <a class="link" href="hospital.html">Open Hospital Page <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="card">
+        <div class="icon" aria-hidden="true">🍔</div>
+        <h2>Food Corner</h2>
+        <p>A food website with menu items and ordering-focused sections.</p>
+        <a class="link" href="food-corner.html">Open Food Corner <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="card">
+        <div class="icon" aria-hidden="true">📚</div>
+        <h2>ABC Online Book Store</h2>
+        <p>An online bookstore concept for discovering books and browsing the store.</p>
+        <a class="link" href="book-store.html">Open Book Store <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="card">
+        <div class="icon" aria-hidden="true">💻</div>
+        <h2>Computer Science Department</h2>
+        <p>A department website with information about computer science and college activities.</p>
+        <a class="link" href="cs-department.html">Open Department Page <span aria-hidden="true">→</span></a>
+      </article>
+    </section>
+  </main>
+  <footer>Built with HTML and CSS · Hosted with GitHub Pages</footer>
+</body>
+</html>
